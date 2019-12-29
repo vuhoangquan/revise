@@ -199,12 +199,11 @@ int recursiveTest(int recursiveInput){
 
 int fibonacciTest(int fibonaciInput){
     if(fibonaciInput==1 || fibonaciInput==2){
-        //cout<<"fibonaciInput : "<<fibonaciInput<<" reached 1"<<endl;
-        cout<<fibonaciInput<<"th cycle passed"<<endl;
+        //cout<<fibonaciInput<<"th cycle passed"<<endl;
         return 1;
     }
     else{
-        cout<<fibonaciInput<<"th cycle "<<endl;
+        //cout<<fibonaciInput<<"th cycle "<<endl;
         return (fibonacciTest(fibonaciInput-1) + fibonacciTest(fibonaciInput-2));
     }
 }//ineffective -- cycle is equal or atleast bigger than the result
@@ -225,7 +224,7 @@ int menu_option(int menuInput){
     return 0;
 }//how to pass a menu form through main if possible
 
-int main(int argc, const char * argv[]) {
+//int main(int argc, const char * argv[]) {
     //ifndef and define use for: header file will only be compiled once
     
     //main_ftream_read_file(); //test using read file (also use file from desktop\lab 5)
@@ -253,9 +252,9 @@ int main(int argc, const char * argv[]) {
     //struct can pass parameter by value or by ref
     //array are passed by ref only - array cant be in return - c++ not support
     
-    cout<<"recursive result: "<<recursiveTest(5)<<endl;
-    cout<<"fibonaci seq result: \n"<<fibonacciTest(8)<<endl;
-    cout<<"fibonaci effcient calc: "<<fibonacciEfficient(8)<<endl;
+    //cout<<"recursive result: "<<recursiveTest(5)<<endl;
+    //cout<<"fibonaci seq result: "<<fibonacciTest(8)<<endl;
+    //cout<<"fibonaci effcient calc: "<<fibonacciEfficient(8)<<endl;
     //menu
     /*
     int input;
@@ -276,6 +275,7 @@ int main(int argc, const char * argv[]) {
         
     }
     */
-    return 0;
-}
+    //return 0;
+//}
+
 

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B752E2AE23B8C6BD0049C02B /* Realisations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B752E2AD23B8C6BD0049C02B /* Realisations.cpp */; };
+		B752E2B123B8C72A0049C02B /* Rectangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B752E2AF23B8C72A0049C02B /* Rectangle.cpp */; };
+		B752E2B423B8CAA10049C02B /* Shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B752E2B223B8CAA10049C02B /* Shape.cpp */; };
+		B752E2B723B8CBC00049C02B /* Square.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B752E2B523B8CBC00049C02B /* Square.cpp */; };
+		B752E2BA23B8CBD00049C02B /* Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B752E2B823B8CBD00049C02B /* Triangle.cpp */; };
 		B7C738EC23AE2C83000312EE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7C738EB23AE2C83000312EE /* main.cpp */; };
 		B7C738F523AE37C4000312EE /* date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7C738F423AE37C4000312EE /* date.cpp */; };
 		B7C738F823AE380B000312EE /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7C738F723AE380B000312EE /* Person.cpp */; };
@@ -26,6 +31,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B752E2AD23B8C6BD0049C02B /* Realisations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Realisations.cpp; sourceTree = "<group>"; };
+		B752E2AF23B8C72A0049C02B /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
+		B752E2B023B8C72A0049C02B /* Rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		B752E2B223B8CAA10049C02B /* Shape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shape.cpp; sourceTree = "<group>"; };
+		B752E2B323B8CAA10049C02B /* Shape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shape.h; sourceTree = "<group>"; };
+		B752E2B523B8CBC00049C02B /* Square.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Square.cpp; sourceTree = "<group>"; };
+		B752E2B623B8CBC00049C02B /* Square.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Square.h; sourceTree = "<group>"; };
+		B752E2B823B8CBD00049C02B /* Triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
+		B752E2B923B8CBD00049C02B /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
 		B7C738E823AE2C83000312EE /* revise */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = revise; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C738EB23AE2C83000312EE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B7C738F323AE3644000312EE /* personTypeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = personTypeTest.h; sourceTree = "<group>"; };
@@ -73,6 +87,15 @@
 				B7C738F723AE380B000312EE /* Person.cpp */,
 				B7C738F923AE389E000312EE /* date.h */,
 				B7C738FA23AE38DB000312EE /* personTypeTest.cpp */,
+				B752E2AD23B8C6BD0049C02B /* Realisations.cpp */,
+				B752E2AF23B8C72A0049C02B /* Rectangle.cpp */,
+				B752E2B023B8C72A0049C02B /* Rectangle.h */,
+				B752E2B223B8CAA10049C02B /* Shape.cpp */,
+				B752E2B323B8CAA10049C02B /* Shape.h */,
+				B752E2B523B8CBC00049C02B /* Square.cpp */,
+				B752E2B623B8CBC00049C02B /* Square.h */,
+				B752E2B823B8CBD00049C02B /* Triangle.cpp */,
+				B752E2B923B8CBD00049C02B /* Triangle.h */,
 			);
 			path = revise;
 			sourceTree = "<group>";
@@ -135,9 +158,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C738FB23AE38DB000312EE /* personTypeTest.cpp in Sources */,
+				B752E2B423B8CAA10049C02B /* Shape.cpp in Sources */,
 				B7C738EC23AE2C83000312EE /* main.cpp in Sources */,
 				B7C738F823AE380B000312EE /* Person.cpp in Sources */,
+				B752E2B723B8CBC00049C02B /* Square.cpp in Sources */,
 				B7C738F523AE37C4000312EE /* date.cpp in Sources */,
+				B752E2AE23B8C6BD0049C02B /* Realisations.cpp in Sources */,
+				B752E2BA23B8CBD00049C02B /* Triangle.cpp in Sources */,
+				B752E2B123B8C72A0049C02B /* Rectangle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
