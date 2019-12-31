@@ -51,7 +51,7 @@ Shape *GetShape (char ch);
 
 //-------------------------------------------------------------------
 
-int main()
+int Realisation_main_program()
 {
     ShapeVec array;
 

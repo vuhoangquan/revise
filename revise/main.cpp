@@ -29,6 +29,7 @@ int main(int argc, const char * argv[]) {
 #include "Person.hpp"
 #include "date.h"
 #include <cmath>
+//#include "Realisations.cpp"
 //#include"ioTest.h"
 using namespace std;
 
@@ -224,7 +225,8 @@ int menu_option(int menuInput){
     return 0;
 }//how to pass a menu form through main if possible
 
-//int main(int argc, const char * argv[]) {
+int main(int argc, const char * argv[]) {
+    //Realisation_main_program();
     //ifndef and define use for: header file will only be compiled once
     
     //main_ftream_read_file(); //test using read file (also use file from desktop\lab 5)
@@ -237,13 +239,16 @@ int menu_option(int menuInput){
     //floating_point_representation();//char to int and vice versa doesn't require cast (look in this function)
     //open_multiple_file();
     
-    /* pass address and pointer diff in main and function comparison:
+     //pass address and pointer diff in main and function comparison:
      int auiget = 425;
      cout << pass_address(auiget) << endl;
+    cout<<auiget<<endl;
      int iagb = 146;
      iagb = pass_pointer(&auiget);
      cout << iagb << endl;
-     */
+     cout<<auiget<<endl;
+    //pass by address and pointer both change the value of parameter var
+     
     //define and class name can be different (class filename and class name can be difference?)
     //declaration vs definition: declaration is sth like :int someFunction(double, double); without implementation while definition has function
     //template 3 basic forms: function, class, variable template
@@ -275,7 +280,7 @@ int menu_option(int menuInput){
         
     }
     */
-    //return 0;
-//}
+    return 0;
+}
 
 
