@@ -31,7 +31,42 @@ int main(int argc, const char * argv[]) {
 #include <cmath>
 //#include "Realisations.cpp"
 //#include"ioTest.h"
+
+//8 jan 2020
 using namespace std;
+
+int main(){
+    cout<<"empty test"<<endl;
+    return 0;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 int main_ftream_read_file() {
     string filename;
@@ -225,7 +260,7 @@ int menu_option(int menuInput){
     return 0;
 }//how to pass a menu form through main if possible
 
-int main(int argc, const char * argv[]) {
+//int main(int argc, const char * argv[]) {
     //Realisation_main_program();
     //ifndef and define use for: header file will only be compiled once
     
@@ -240,13 +275,13 @@ int main(int argc, const char * argv[]) {
     //open_multiple_file();
     
      //pass address and pointer diff in main and function comparison:
-     int auiget = 425;
-     cout << pass_address(auiget) << endl;
-    cout<<auiget<<endl;
-     int iagb = 146;
-     iagb = pass_pointer(&auiget);
-     cout << iagb << endl;
-     cout<<auiget<<endl;
+     //int auiget = 425;
+     //cout << pass_address(auiget) << endl;
+     //cout<<auiget<<endl;
+     //int iagb = 146;
+     //iagb = pass_pointer(&auiget);
+     //cout << iagb << endl;
+     //cout<<auiget<<endl;
     //pass by address and pointer both change the value of parameter var
      
     //define and class name can be different (class filename and class name can be difference?)
@@ -280,7 +315,7 @@ int main(int argc, const char * argv[]) {
         
     }
     */
-    return 0;
-}
+    //return 0;
+//}
 
 
