@@ -16,6 +16,7 @@
 		B7C738F523AE37C4000312EE /* date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7C738F423AE37C4000312EE /* date.cpp */; };
 		B7C738F823AE380B000312EE /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7C738F723AE380B000312EE /* Person.cpp */; };
 		B7C738FB23AE38DB000312EE /* personTypeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7C738FA23AE38DB000312EE /* personTypeTest.cpp */; };
+		B7DD63DD23C5DF670040E500 /* Track.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B7DD63DC23C5DF670040E500 /* Track.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,6 +49,8 @@
 		B7C738F723AE380B000312EE /* Person.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
 		B7C738F923AE389E000312EE /* date.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = date.h; sourceTree = "<group>"; };
 		B7C738FA23AE38DB000312EE /* personTypeTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = personTypeTest.cpp; sourceTree = "<group>"; };
+		B7DD63DC23C5DF670040E500 /* Track.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Track.cpp; sourceTree = "<group>"; };
+		B7DD63DE23C5DF7E0040E500 /* Track.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				B7C738EB23AE2C83000312EE /* main.cpp */,
+				B7DD63DE23C5DF7E0040E500 /* Track.h */,
+				B7DD63DC23C5DF670040E500 /* Track.cpp */,
 				B7C738F323AE3644000312EE /* personTypeTest.h */,
 				B7C738F423AE37C4000312EE /* date.cpp */,
 				B7C738F623AE37E6000312EE /* Person.hpp */,
@@ -164,6 +169,7 @@
 				B752E2B723B8CBC00049C02B /* Square.cpp in Sources */,
 				B7C738F523AE37C4000312EE /* date.cpp in Sources */,
 				B752E2AE23B8C6BD0049C02B /* Realisations.cpp in Sources */,
+				B7DD63DD23C5DF670040E500 /* Track.cpp in Sources */,
 				B752E2BA23B8CBD00049C02B /* Triangle.cpp in Sources */,
 				B752E2B123B8C72A0049C02B /* Rectangle.cpp in Sources */,
 			);
