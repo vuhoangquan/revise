@@ -83,15 +83,13 @@
 		B7C738EA23AE2C83000312EE /* revise */ = {
 			isa = PBXGroup;
 			children = (
-				B7C738EB23AE2C83000312EE /* main.cpp */,
-				B7DD63DE23C5DF7E0040E500 /* Track.h */,
-				B7DD63DC23C5DF670040E500 /* Track.cpp */,
-				B7C738F323AE3644000312EE /* personTypeTest.h */,
 				B7C738F423AE37C4000312EE /* date.cpp */,
-				B7C738F623AE37E6000312EE /* Person.hpp */,
-				B7C738F723AE380B000312EE /* Person.cpp */,
 				B7C738F923AE389E000312EE /* date.h */,
+				B7C738EB23AE2C83000312EE /* main.cpp */,
+				B7C738F723AE380B000312EE /* Person.cpp */,
+				B7C738F623AE37E6000312EE /* Person.hpp */,
 				B7C738FA23AE38DB000312EE /* personTypeTest.cpp */,
+				B7C738F323AE3644000312EE /* personTypeTest.h */,
 				B752E2AD23B8C6BD0049C02B /* Realisations.cpp */,
 				B752E2AF23B8C72A0049C02B /* Rectangle.cpp */,
 				B752E2B023B8C72A0049C02B /* Rectangle.h */,
@@ -99,6 +97,8 @@
 				B752E2B323B8CAA10049C02B /* Shape.h */,
 				B752E2B523B8CBC00049C02B /* Square.cpp */,
 				B752E2B623B8CBC00049C02B /* Square.h */,
+				B7DD63DC23C5DF670040E500 /* Track.cpp */,
+				B7DD63DE23C5DF7E0040E500 /* Track.h */,
 				B752E2B823B8CBD00049C02B /* Triangle.cpp */,
 				B752E2B923B8CBD00049C02B /* Triangle.h */,
 			);

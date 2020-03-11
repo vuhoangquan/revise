@@ -15,7 +15,9 @@ date::date() // hearer file name ::header file location
     Date = 13; Month = 10; Year = 1999;
     cout<<"date constructor called"<<endl;
 }
-date::~date() {}
+date::~date() {
+    //Date=-1;Month=-1;Year=-1;
+}
 date::date(int dd, int mm, int yyyy) {
     cout<<"constructor that set date called"<<endl;
     Date = dd; Month = mm; Year = yyyy;
