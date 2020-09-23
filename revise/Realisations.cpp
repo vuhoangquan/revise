@@ -51,16 +51,16 @@ Shape *GetShape (char ch);
 
 //-------------------------------------------------------------------
 
-int main()
-{
-    ShapeVec array;
-
-    Input (array); // not a method, just a normal procedure
-    Draw (array); // not a method, just a normal procedure
-
-    cout << endl;
-    return 0;
-}
+//int main()
+//{
+//    ShapeVec array;
+//
+//    Input (array); // not a method, just a normal procedure
+//    Draw (array); // not a method, just a normal procedure
+//
+//    cout << endl;
+//    return 0;
+//}
 
 //-------------------------------------------------------------------
 

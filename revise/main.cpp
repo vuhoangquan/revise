@@ -25,10 +25,13 @@ int main(int argc, const char * argv[]) {
 #include <iostream>
 #include <fstream>
 #include <string>
+
 #include "personTypeTest.h"//use for addresspointer_test_1()
 #include "Person.hpp"
 #include "date.h"
 #include <cmath>
+
+#include "bst.h"
 //#include"ioTest.h"
 using namespace std;
 
@@ -224,7 +227,72 @@ int menu_option(int menuInput){
     return 0;
 }//how to pass a menu form through main if possible
 
-//int main(int argc, const char * argv[]) {
+int main(int argc, const char * argv[]) {
+    nodeBST<int> inttree;
+    inttree.insert(100);
+    inttree.insert(237);
+    inttree.insert(150);
+    inttree.insert(125);
+    inttree.insert(50);
+    inttree.insert(75);
+    inttree.insert(25);
+    inttree.insert(175);
+    inttree.insert(132);
+    inttree.insert(400);
+    inttree.insert(115);
+    inttree.insert(76);
+    inttree.insert(77);
+    inttree.insert(78);
+
+    //inttree.preorderTraversal();cout<<endl;
+    inttree.inorderTraversal();cout<<endl;
+    //inttree.postorderTraversal();
+    
+    int *intarray;
+    intarray=(int*)malloc(30);
+    cout<<intarray<<endl;
+    for(int i=0;i<30;i++){
+        intarray[i] = 9;
+    }
+    for(int i =0; i<20;i++){
+        cout<<intarray[i]<<"  ";
+    }
+    cout<<"before:"<<*intarray<<" "<<intarray<<endl;
+
+    inttree.addToIntAraay(intarray);
+    cout<<"\n after:"<<*intarray<<" "<<intarray<<endl;
+
+    for (int i =0;i<15;i++){
+        cout<<"value:"<<*intarray<<" "<<intarray<<endl;
+        intarray++;
+    }
+    
+//    bool x=false,y=false;
+//    cout<<"~x || y"<<endl;
+//    if (~x || y){
+//        cout<<"return true"<<endl;//>>this returned
+//    }else{
+//        cout<<"return false"<<endl;
+//    }
+//    cout<<" x || y"<<endl;
+//    if(x || y){
+//        cout<<"return true"<<endl;
+//    }else{
+//        cout<<"return false"<<endl;//>>this returned
+//    }
+//
+//    typedef struct name1{
+//        int age:8;
+//        char:0;
+//    } name1;
+//
+//    void *ptr1 =nullptr;
+//
+//    int cc=10;
+    //cc=+(-3);
+    //cc = cc + (-3);
+    //cout<<cc<<endl;
+    //Realisation_main_program();
     //ifndef and define use for: header file will only be compiled once
     
     //main_ftream_read_file(); //test using read file (also use file from desktop\lab 5)
@@ -275,7 +343,5 @@ int menu_option(int menuInput){
         
     }
     */
-    //return 0;
-//}
-
-
+    return 0;
+}
