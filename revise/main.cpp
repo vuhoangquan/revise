@@ -5,31 +5,14 @@
 //  Copyright © 2019 Vũ hoàng Quân. All rights reserved.
 //
 
-/*
-#include <iostream>
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
-}
-*/
-
-//  main.cpp
-//  cpp1
-//
-//  Created by Vũ hoàng Quân on 4/9/19.
-//  Copyright © 2019 Vũ hoàng Quân. All rights reserved.
-//
-
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cmath>
 
 #include "personTypeTest.h"//use for addresspointer_test_1()
 #include "Person.hpp"
 #include "date.h"
-#include <cmath>
 
 #include "bst.h"
 //#include"ioTest.h"
@@ -222,12 +205,36 @@ int fibonacciEfficient(int fibonaciInput){
     return result;
 }//1 1 2 3 5 8
 
-int menu_option(int menuInput){
+void some_confusion_inloop(){
+    bool x=false,y=false;
+    cout<<"~x || y"<<endl;
+    if (~x || y){
+        cout<<"return true"<<endl;//>>this returned
+    }else{
+        cout<<"return false"<<endl;
+    }
+    cout<<" x || y"<<endl;
+    if(x || y){
+        cout<<"return true"<<endl;
+    }else{
+        cout<<"return false"<<endl;//>>this returned
+    }
     
-    return 0;
-}//how to pass a menu form through main if possible
+    typedef struct name1{
+        int age:8;
+        char:0;
+    } name1;
+    
+    void *ptr1 =nullptr;
+    
+    int cc=10;
+    cc=+(-3);
+    cc = cc + (-3);
+    cout<<cc<<endl;
+}
 
-int main(int argc, const char * argv[]) {
+void test_BSTtoIntArray(){
+    cout<<"\n----------------------------\n";
     nodeBST<int> inttree;
     inttree.insert(100);
     inttree.insert(237);
@@ -244,8 +251,8 @@ int main(int argc, const char * argv[]) {
     inttree.insert(77);
     inttree.insert(78);
 
-    //inttree.preorderTraversal();cout<<endl;
-    inttree.inorderTraversal();cout<<endl;
+    inttree.preorderTraversal();cout<<endl;
+    //inttree.inorderTraversal();cout<<endl;
     //inttree.postorderTraversal();
     
     int *intarray;
@@ -266,32 +273,24 @@ int main(int argc, const char * argv[]) {
         cout<<"value:"<<*intarray<<" "<<intarray<<endl;
         intarray++;
     }
+}
+
+void test_sortedArrayToBST(){
+    int array1[]= {1,2,3,4,5,6,7,8,9,10,12,20,21,24,55};
+    cout<<"size of array 1 is:"<<sizeof(array1)/sizeof(array1[0])<<endl;
+    cout<<"size of array 1 is:"<<sizeof(array1)/sizeof(*array1)<<endl;
     
-//    bool x=false,y=false;
-//    cout<<"~x || y"<<endl;
-//    if (~x || y){
-//        cout<<"return true"<<endl;//>>this returned
-//    }else{
-//        cout<<"return false"<<endl;
-//    }
-//    cout<<" x || y"<<endl;
-//    if(x || y){
-//        cout<<"return true"<<endl;
-//    }else{
-//        cout<<"return false"<<endl;//>>this returned
-//    }
-//
-//    typedef struct name1{
-//        int age:8;
-//        char:0;
-//    } name1;
-//
-//    void *ptr1 =nullptr;
-//
-//    int cc=10;
-    //cc=+(-3);
-    //cc = cc + (-3);
-    //cout<<cc<<endl;
+    nodeBST<int> tree2;
+    tree2.sortedArrayToBST(array1, sizeof(array1)/sizeof(array1[0]));
+    tree2.inorderTraversal();cout<<endl;
+    tree2.preorderTraversal();
+}
+
+int main(int argc, const char * argv[]) {
+    test_sortedArrayToBST();
+    //test_BSTtoIntArray();
+    
+
     //Realisation_main_program();
     //ifndef and define use for: header file will only be compiled once
     
@@ -323,25 +322,6 @@ int main(int argc, const char * argv[]) {
     //cout<<"recursive result: "<<recursiveTest(5)<<endl;
     //cout<<"fibonaci seq result: "<<fibonacciTest(8)<<endl;
     //cout<<"fibonaci effcient calc: "<<fibonacciEfficient(8)<<endl;
-    //menu
-    /*
-    int input;
-    bool repeat=true;
-    while (repeat == true){
-        cout<<"choose: "<<endl;
-        cout<<"1: view all"<<endl;//>>password
-        cout<<"2: add"<<endl;
-        cout<<"3: exit"<<endl;
-        cin>>input;
-        if(input==1){
-            
-        }else if(input==2){
-            
-        }else if(input==3){
-            repeat=false;
-        }
-        
-    }
-    */
+    
     return 0;
 }

@@ -37,6 +37,7 @@ public:
      bool operator<(const elemType&, const elemType&);
      */
     void addToIntAraay(int* arrayptr);
+    nodeType<elemType>* sortedArrayToBST(int nums[], int nums_size);
 private:
     void inorder(nodeType<elemType>* p)const;
     void preorder(nodeType<elemType>* p)const;
@@ -46,6 +47,7 @@ private:
 
     nodeType<elemType>* root;
     int counter=0;
+    nodeType<elemType>* helper(int nums[], int low, int high);
 };
 //---------------------------------------------------
 //---------------------------------------------------
@@ -191,6 +193,7 @@ template<class elemType>
 void nodeBST<elemType>::addToIntAraay(int* intarray){
     inorderToArray(intarray, root);
 }
+
 template <class elemType>
 void nodeBST<elemType>::inorderToArray(int* intarray, nodeType<elemType>* p) {
     if (p != NULL) {
@@ -201,11 +204,76 @@ void nodeBST<elemType>::inorderToArray(int* intarray, nodeType<elemType>* p) {
         cout<<" counter ="<<counter<<":"<<" number ="<< p->numberNo<<" ";
         cout << *intarray << " "<<intarray<<endl;
 
-        intarray= intarray + p->numberNo;
+        intarray++;
         counter++;
         inorderToArray(intarray, p->rLink);
     }
 }
+
+template <class elemType>
+nodeType<elemType>* nodeBST<elemType>::sortedArrayToBST(int nums[], int nums_size) {
+   return helper(nums, 0, nums_size - 1);
+}
+
+template <class elemType>
+nodeType<elemType>* nodeBST<elemType>::helper(int nums[], int low, int high){
+    if(low > high) {
+        return NULL;
+    }
+    int mid = low + (high - low)/2;
+    //center val of sorted array as the root of the bst
+    nodeType<elemType>* head;
+    head = new nodeType<elemType>;
+    head->info = nums[mid];
+    head->lLink = NULL;
+    head->rLink = NULL;
+    if(root==NULL){root=head;}
+    //left of the mid value should go to the left of this root node to satisfy bst
+    head->lLink = helper(nums, low, mid - 1);
+    //right of the mid value should go to the right of this root node to satisfy bst
+    head->rLink = helper(nums, mid + 1, high);
+    return head;
+    
+}
+//----------------------------------------------------------------
+/*code above referenced(C++) from leetcode:
+ https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/discuss/856976/clean-c%2B%2B-solution
+ 
+ TreeNode* sortedArrayToBST(vector<int>& nums) {
+    return addNode(nums, 0, nums.size() - 1);
+}
+TreeNode* addNode(vector<int>& nums, int l, int r) {
+    if (l > r) return NULL;
+    int mid = (r-l)/2 + l;
+    TreeNode* root = new TreeNode(nums[mid]);
+    root->left = addNode(nums, l, mid-1);
+    root->right = addNode(nums, mid+1, r);
+    return root;
+ 
+ and referenced (Java) from medium: https://medium.com/@harycane/convert-sorted-array-to-bst-35781e940ca5
+ 
+ class Solution {
+     public TreeNode sortedArrayToBST(int[] nums) {
+        return helper(nums, 0, nums.length - 1);
+     }
+     
+     private TreeNode helper(int[] nums, int low, int high) {
+         if(low > high) {
+             return null;
+         }
+         int mid = low + (high - low)/2;
+         //center val of sorted array as the root of the bst
+         TreeNode head = new TreeNode(nums[mid]);
+         //left of the mid value should go to the left of this root node to satisfy bst
+         head.left = helper(nums, low, mid - 1);
+         //right of the mid value should go to the right of this root node to satisfy bst
+         head.right = helper(nums, mid + 1, high);
+         return head;
+     }
+     //T O(log n) S O(n) recursion stack space
+ }
+}*/
+//----------------------------------------------------------------
 
 
 template <class elemType>
