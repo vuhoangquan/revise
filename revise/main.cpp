@@ -283,9 +283,10 @@ void test_sortedArrayToBST(){
     nodeBST<int> tree2;
     tree2.sortedArrayToBST(array1, sizeof(array1)/sizeof(array1[0]));
     tree2.inorderTraversal();cout<<endl;
-    tree2.preorderTraversal();
+    tree2.inOrderIterative();
+    //tree2.preorderTraversal();
 }
-
+//==================================================================
 int main(int argc, const char * argv[]) {
     test_sortedArrayToBST();
     //test_BSTtoIntArray();

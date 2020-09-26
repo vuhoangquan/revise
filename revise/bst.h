@@ -1,7 +1,6 @@
 /*
  imported from snippet - may not be newest updated version
  imported on 20/9/2020
- 
  */
 
 #ifndef H_nodeBST
@@ -27,6 +26,7 @@ public:
     void deleteNode(const elemType& deleteItem);
     bool isEmpty()const;
     void inorderTraversal()const;
+    void inOrderIterative();
     void preorderTraversal()const;
     void postorderTraversal()const;
     void destroy(nodeType<elemType>*& p);
@@ -178,13 +178,43 @@ void nodeBST<elemType>::inorder(nodeType<elemType>* p)const {
         inorder(p->rLink);
     }
 }
+/* Iterative function for inorder tree traversal */
+template <class elemType>
+void nodeBST<elemType>::inOrderIterative()
+{
+    stack<nodeType<elemType> *> s;
+    nodeType<elemType> *curr = root;
+  
+    while (curr != NULL || s.empty() == false)
+    {
+        /* Reach the left most Node of the curr Node */
+        while (curr !=  NULL)
+        {
+            /* place pointer to a tree node on
+               the stack before traversing
+              the node's left subtree */
+            s.push(curr);
+            curr = curr->lLink;
+        }
+  
+        /* Current must be NULL at this point */
+        curr = s.top();
+        s.pop();
+        cout << curr->info << " ";
+  
+        /* we have visited the node and its
+           left subtree.  Now, it's right
+           subtree's turn */
+        curr = curr->rLink;
+  
+    } /* end of while */
+}
 template <class elemType>
 void nodeBST<elemType>::postorder(nodeType<elemType>* p)const {
     if (p != NULL) {
         postorder(p->lLink);
         postorder(p->rLink);
         cout << p->info << " ";
-        
     }
 }
 
