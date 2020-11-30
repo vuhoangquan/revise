@@ -286,9 +286,31 @@ void test_sortedArrayToBST(){
     tree2.inOrderIterative();
     //tree2.preorderTraversal();
 }
+string shiftAlphabet(int shift) {
+    int start = 0;
+    if (shift < 0) {
+        start = (int) 'Z' + shift + 1;
+    } else {
+        start = 'A' + shift;
+    }
+    string result = "";
+    char currChar = (char) start;
+    for(; currChar <= 'Z'; ++currChar) {
+        result = result + currChar;
+    }
+    if(result.length() < 26) {
+        for(currChar = 'A'; result.length() < 26; ++currChar) {
+            result = result + currChar;
+        }
+    }
+    return result;
+}
 //==================================================================
 int main(int argc, const char * argv[]) {
-    test_sortedArrayToBST();
+    string string1="aaaaaa";
+    string1 = shiftAlphabet(1);
+    cout<<string1<<endl;
+    //test_sortedArrayToBST();
     //test_BSTtoIntArray();
     
 
