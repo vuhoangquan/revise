@@ -31,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B7472F402516831A00302A50 /* bst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bst.h; sourceTree = "<group>"; };
 		B752E2AD23B8C6BD0049C02B /* Realisations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Realisations.cpp; sourceTree = "<group>"; };
 		B752E2AF23B8C72A0049C02B /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
 		B752E2B023B8C72A0049C02B /* Rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
