@@ -266,7 +266,8 @@ void test_BSTtoIntArray(){
     }
     cout<<"before:"<<*intarray<<" "<<intarray<<endl;
 
-    inttree.addToIntAraay(intarray);
+    //inttree.addToIntAraay(intarray);
+    inttree.BST_to_inOrder(intarray);
     cout<<"\n after:"<<*intarray<<" "<<intarray<<endl;
 
     for (int i =0;i<15;i++){
@@ -286,6 +287,7 @@ void test_sortedArrayToBST(){
     tree2.inOrderIterative();
     //tree2.preorderTraversal();
 }
+
 string shiftAlphabet(int shift) {
     int start = 0;
     if (shift < 0) {
@@ -305,13 +307,14 @@ string shiftAlphabet(int shift) {
     }
     return result;
 }
+
 //==================================================================
 int main(int argc, const char * argv[]) {
-    string string1="aaaaaa";
-    string1 = shiftAlphabet(1);
-    cout<<string1<<endl;
+    //string string1="aaaaaa";
+    //string1 = shiftAlphabet(1);
+    //cout<<string1<<endl;
     //test_sortedArrayToBST();
-    //test_BSTtoIntArray();
+    test_BSTtoIntArray();
     
 
     //Realisation_main_program();

@@ -27,6 +27,7 @@ public:
     bool isEmpty()const;
     void inorderTraversal()const;
     void inOrderIterative();
+    void BST_to_inOrder(int* int_array);
     void preorderTraversal()const;
     void postorderTraversal()const;
     void destroy(nodeType<elemType>*& p);
@@ -209,6 +210,31 @@ void nodeBST<elemType>::inOrderIterative()
   
     } /* end of while */
 }
+//output this BST to a prealloc size array
+//param: prealloc sized array
+//modified inorder tree traversal - above
+template <class elemType>
+void nodeBST<elemType>::BST_to_inOrder(int * int_array)
+{
+    stack<nodeType<elemType> *> s;
+    nodeType<elemType> *curr = root;
+  
+    while (curr != NULL || s.empty() == false)
+    {
+        while (curr !=  NULL)
+        {
+            s.push(curr);
+            curr = curr->lLink;
+        }
+        curr = s.top();
+        s.pop();
+        
+        *int_array = curr->info;//cout << curr->info << " ";
+        int_array++;
+        
+        curr = curr->rLink;
+    }
+}
 template <class elemType>
 void nodeBST<elemType>::postorder(nodeType<elemType>* p)const {
     if (p != NULL) {
@@ -218,7 +244,7 @@ void nodeBST<elemType>::postorder(nodeType<elemType>* p)const {
     }
 }
 
-
+//pointer arithmatic is bad -> onenote/github-revise to see more
 template<class elemType>
 void nodeBST<elemType>::addToIntAraay(int* intarray){
     inorderToArray(intarray, root);
