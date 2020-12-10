@@ -251,17 +251,17 @@ void test_BSTtoIntArray(){
     inttree.insert(77);
     inttree.insert(78);
 
-    inttree.preorderTraversal();cout<<endl;
-    //inttree.inorderTraversal();cout<<endl;
+    //inttree.preorderTraversal();cout<<endl;
+    inttree.inorderTraversal();cout<<endl;
     //inttree.postorderTraversal();
     
     int *intarray;
-    intarray=(int*)malloc(30);
-    cout<<intarray<<endl;
-    for(int i=0;i<30;i++){
+    intarray=(int*)malloc(30);//alloc arr
+    cout<<intarray<<endl;//print arr address
+    for(int i=0;i<30;i++){//fill arr with 9 9 9 9...
         intarray[i] = 9;
     }
-    for(int i =0; i<20;i++){
+    for(int i =0; i<20;i++){//print arr init value
         cout<<intarray[i]<<"  ";
     }
     cout<<"before:"<<*intarray<<" "<<intarray<<endl;

@@ -81,6 +81,7 @@ void nodeBST<elemType>::insert(const elemType& insertItem) {
     nodeType<elemType>* newNode;
     newNode = new nodeType<elemType>;//invoke default construct
     newNode->info = insertItem;
+    newNode->numberNo=counter;
     newNode->lLink = NULL;
     newNode->rLink = NULL;
     if (root == NULL)
@@ -104,8 +105,8 @@ void nodeBST<elemType>::insert(const elemType& insertItem) {
             trailCurrent->lLink = newNode;
         else
             trailCurrent->rLink = newNode;
-        
     }
+    counter++;
 }
 template <class elemType>
 bool nodeBST<elemType>::search(const elemType& searchItem)const {
@@ -176,6 +177,7 @@ void nodeBST<elemType>::inorder(nodeType<elemType>* p)const {
     if (p != NULL) {
         inorder(p->lLink);
         cout << p->info << " ";
+        cout << p->numberNo << "\n";
         inorder(p->rLink);
     }
 }
@@ -337,9 +339,8 @@ void nodeBST<elemType>::destroy(nodeType<elemType>*& p) {
     if (p != NULL) {
         destroy(p->lLink);
         destroy(p->rLink);
-        delete p;
         p = NULL;
-        
+        delete p;
     }
 }
 template <class elemType>
