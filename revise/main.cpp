@@ -241,39 +241,41 @@ void test_BSTtoIntArray(){
     inttree.insert(150);
     inttree.insert(125);
     inttree.insert(50);
+    inttree.inorderTraversal();cout<<endl;
     inttree.insert(75);
     inttree.insert(25);
     inttree.insert(175);
     inttree.insert(132);
     inttree.insert(400);
+    inttree.inorderTraversal();cout<<endl;
     inttree.insert(115);
-    inttree.insert(76);
+    //inttree.insert(76);
     inttree.insert(77);
-    inttree.insert(78);
+    //inttree.insert(78);
 
     //inttree.preorderTraversal();cout<<endl;
     inttree.inorderTraversal();cout<<endl;
     //inttree.postorderTraversal();
     
-    int *intarray;
-    intarray=(int*)malloc(30);//alloc arr
-    cout<<intarray<<endl;//print arr address
-    for(int i=0;i<30;i++){//fill arr with 9 9 9 9...
-        intarray[i] = 9;
-    }
-    for(int i =0; i<20;i++){//print arr init value
-        cout<<intarray[i]<<"  ";
-    }
-    cout<<"before:"<<*intarray<<" "<<intarray<<endl;
-
-    //inttree.addToIntAraay(intarray);
-    inttree.BST_to_inOrder(intarray);
-    cout<<"\n after:"<<*intarray<<" "<<intarray<<endl;
-
-    for (int i =0;i<15;i++){
-        cout<<"value:"<<*intarray<<" "<<intarray<<endl;
-        intarray++;
-    }
+//    int *intarray;
+//    intarray=(int*)malloc(30);//alloc arr
+//    cout<<intarray<<endl;//print arr address
+//    for(int i=0;i<30;i++){//fill arr with 9 9 9 9...
+//        intarray[i] = 9;
+//    }
+//    for(int i =0; i<20;i++){//print arr init value
+//        cout<<intarray[i]<<"  ";
+//    }
+//    cout<<"before:"<<*intarray<<" "<<intarray<<endl;
+//
+//    //inttree.addToIntAraay(intarray);
+//    inttree.BST_to_inOrder(intarray);
+//    cout<<"\n after:"<<*intarray<<" "<<intarray<<endl;
+//
+//    for (int i =0;i<15;i++){
+//        cout<<"value:"<<*intarray<<" "<<intarray<<endl;
+//        intarray++;
+//    }
 }
 
 void test_sortedArrayToBST(){

@@ -31,7 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B7472F402516831A00302A50 /* bst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bst.h; sourceTree = "<group>"; };
+		B72EA09A2582539C00048AD5 /* bst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bst.h; sourceTree = "<group>"; };
 		B752E2AD23B8C6BD0049C02B /* Realisations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Realisations.cpp; sourceTree = "<group>"; };
 		B752E2AF23B8C72A0049C02B /* Rectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Rectangle.cpp; sourceTree = "<group>"; };
 		B752E2B023B8C72A0049C02B /* Rectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
@@ -81,6 +81,7 @@
 		B7C738EA23AE2C83000312EE /* revise */ = {
 			isa = PBXGroup;
 			children = (
+				B72EA09A2582539C00048AD5 /* bst.h */,
 				B7C738EB23AE2C83000312EE /* main.cpp */,
 				B7C738F323AE3644000312EE /* personTypeTest.h */,
 				B7C738F423AE37C4000312EE /* date.cpp */,

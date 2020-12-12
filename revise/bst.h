@@ -7,6 +7,7 @@
 #define H_nodeBST
 //---------------------------------------------------
 #include<iostream>
+#include<algorithm>
 using namespace std;
 //---------------------------------------------------
 template <class elemType>
@@ -15,6 +16,7 @@ struct nodeType {
     nodeType<elemType>* lLink;
     nodeType<elemType>* rLink;
     int numberNo=0;
+    int height=0;
 };
 template <class elemType>
 class nodeBST {
@@ -32,13 +34,13 @@ public:
     void postorderTraversal()const;
     void destroy(nodeType<elemType>*& p);
     nodeType<elemType> getRoot()const;
-    /*
-     //not needed - mistake
-     bool operator==(const elemType&, const elemType&);
-     bool operator<(const elemType&, const elemType&);
-     */
     void addToIntAraay(int* arrayptr);
     nodeType<elemType>* sortedArrayToBST(int nums[], int nums_size);
+    // for AVL tree
+    int getBalance(nodeType<elemType>*& p);
+    int getHeight(nodeType<elemType>* p);
+    nodeType<elemType>* rightRotate(nodeType<elemType>* y);
+    nodeType<elemType>* leftRotate(nodeType<elemType>* x);
 private:
     void inorder(nodeType<elemType>* p)const;
     void preorder(nodeType<elemType>* p)const;
@@ -53,19 +55,7 @@ private:
 //---------------------------------------------------
 //---------------------------------------------------
 //implementation
-/*
- //not needed - mistake
- template <class elemType>
- bool nodeBST<elemType>::operator==(elemType& leftHS, elemType& rightHS)
- {
- return (strcmp(leftHS.info, rightHS) == 0);
- }
- template <class elemType>
- bool nodeBST<elemType>::operator<(elemType& leftHS, elemType& rightHS)
- {
- return (strcmp(leftHS.info, rightHS) < 0);
- }
- */
+
 template <class elemType>
 nodeBST<elemType>::nodeBST() {
     root = NULL;
@@ -81,33 +71,118 @@ void nodeBST<elemType>::insert(const elemType& insertItem) {
     nodeType<elemType>* newNode;
     newNode = new nodeType<elemType>;//invoke default construct
     newNode->info = insertItem;
+    newNode->height = 1;// newly added node height is always 1
     newNode->numberNo=counter;
     newNode->lLink = NULL;
     newNode->rLink = NULL;
+    
     if (root == NULL)
         root = newNode;
     else {
+        stack<nodeType<elemType> *> s;
         current = root;
         while (current != NULL) {
             trailCurrent = current;
-            if (insertItem == current->info) {//compare struct
+            s.push(trailCurrent);
+            if (insertItem == current->info) {
                 /*cout << "dupplicate are not allowed"
                  << "value: " << insertItem << endl;*/
                 return;
             }
             else
-                if (insertItem < current->info)//compare string
+                if (insertItem < current->info)
                     current = current->lLink;
                 else
                     current = current->rLink;
-        }//end while
-        if (insertItem < trailCurrent->info)//compare string
+        }
+        //add the new node
+        if (insertItem < trailCurrent->info)
             trailCurrent->lLink = newNode;
         else
             trailCurrent->rLink = newNode;
+        // move up the parent node to root
+        while(!s.empty()){
+            //update height
+            current = s.top();
+            s.pop();
+            bool change_root=false, rotated=false;
+            if(current==root){change_root = true;}
+            current->height = max(getHeight(current->lLink), getHeight(current->rLink)) + 1;
+            //check balance and rotate
+            int balance = getBalance(current);
+            int leftBalance = getBalance(current->lLink);
+            int rightBalance = getBalance(current->rLink);
+            
+            if(balance > 1 && (leftBalance > 0)){
+                current = rightRotate(current);
+                rotated=true;
+            }
+            if(balance < -1 && (rightBalance < 0)){
+                current = leftRotate(current);
+                rotated =true;
+            }
+            if(balance > 1 && (leftBalance < 0)){
+                current->lLink = leftRotate(current->lLink);
+                current = rightRotate(current);
+                rotated=true;
+            }
+            if(balance < -1 && (rightBalance > 0)){
+                current->rLink = rightRotate(current->rLink);
+                current = leftRotate(current);
+                rotated=true;
+            }
+            if(change_root==true && rotated==true){root = current;}
+        }
     }
     counter++;
 }
+
+template<class elemType>
+int nodeBST<elemType>::getBalance(nodeType<elemType>*& p){
+    if(p==NULL){
+        return 0;
+    }
+    return (getHeight(p->lLink) - getHeight(p->rLink));
+}
+template<class elemType>
+int nodeBST<elemType>::getHeight(nodeType<elemType> *p){
+    if(p==NULL){return 0;}
+    return (p->height);
+}
+
+template<class elemType>
+nodeType<elemType>* nodeBST<elemType>::rightRotate(nodeType<elemType> *y){
+    /*
+         y                               x
+        / \     Right Rotation          /  \
+       x   T3   - - - - - - - >        T1   y
+      / \       < - - - - - - -            / \
+     T1  T2     Left Rotation            T2  T3
+
+     */
+    nodeType<elemType>* x = y->lLink;
+    nodeType<elemType>* T2 = x->rLink;
+    //rotation
+    x->rLink = y;
+    y->lLink = T2;
+    //rebalance
+    y->height = max(getHeight(y->lLink), getHeight(y->rLink)) + 1;
+    x->height = max(getHeight(x->lLink), getHeight(x->rLink)) + 1;
+    return x;
+}
+template<class elemType>
+nodeType<elemType>* nodeBST<elemType>::leftRotate(nodeType<elemType> *x){
+    nodeType<elemType>* y = x->rLink;
+    nodeType<elemType>* T2 = y->lLink;
+    //rotation
+    y->lLink = x;
+    x->rLink = T2;
+    //rebalance
+    x->height = max(getHeight(x->lLink), getHeight(x->rLink)) + 1;
+    y->height = max(getHeight(y->lLink), getHeight(y->rLink)) + 1;
+    return y;
+}
+
 template <class elemType>
 bool nodeBST<elemType>::search(const elemType& searchItem)const {
     nodeType<elemType>* current;
@@ -177,7 +252,8 @@ void nodeBST<elemType>::inorder(nodeType<elemType>* p)const {
     if (p != NULL) {
         inorder(p->lLink);
         cout << p->info << " ";
-        cout << p->numberNo << "\n";
+        cout << p->numberNo << " ";
+        cout << p->height << "\n";
         inorder(p->rLink);
     }
 }
