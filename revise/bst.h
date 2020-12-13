@@ -131,7 +131,16 @@ void nodeBST<elemType>::insert(const elemType& insertItem) {
                 current = leftRotate(current);
                 rotated=true;
             }
-            if(change_root==true && rotated==true){root = current;}
+            if(change_root==true && rotated==true){
+                root = current;
+            }else if(rotated==true){// point parent node to re-ordered sub-nodes
+                trailCurrent = s.top();
+                if(trailCurrent->info > current->info){
+                    trailCurrent->lLink = current;
+                }else if(trailCurrent->info < current->info){
+                    trailCurrent->rLink = current;
+                }
+            }
         }
     }
     counter++;
@@ -251,8 +260,9 @@ template <class elemType>
 void nodeBST<elemType>::inorder(nodeType<elemType>* p)const {
     if (p != NULL) {
         inorder(p->lLink);
+        for (int i=0;i<p->height;i++){cout<<"  ";}
         cout << p->info << " ";
-        cout << p->numberNo << " ";
+        //cout << p->numberNo << " ";
         cout << p->height << "\n";
         inorder(p->rLink);
     }

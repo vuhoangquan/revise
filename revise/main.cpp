@@ -249,9 +249,9 @@ void test_BSTtoIntArray(){
     inttree.insert(400);
     inttree.inorderTraversal();cout<<endl;
     inttree.insert(115);
-    //inttree.insert(76);
+    inttree.insert(76);
     inttree.insert(77);
-    //inttree.insert(78);
+    inttree.insert(78);
 
     //inttree.preorderTraversal();cout<<endl;
     inttree.inorderTraversal();cout<<endl;
