@@ -252,10 +252,20 @@ void test_BSTtoIntArray(){
     inttree.insert(76);
     inttree.insert(77);
     inttree.insert(78);
-
-    //inttree.preorderTraversal();cout<<endl;
+    cout<<"\n----------------------------\n";
+    nodeBST<int> intTree2;
+    intTree2.insert(10);
+    intTree2.insert(12);
+    intTree2.insert(13);
+    intTree2.insert(15);
+    intTree2.insert(17);
+    intTree2.insert(20);
+    intTree2.insert(16);
+    intTree2.insert(5);
+    intTree2.insert(9);
+    intTree2.insert(42);
+    intTree2.inorderTraversal();cout<<endl;
     inttree.inorderTraversal();cout<<endl;
-    //inttree.postorderTraversal();
     
 //    int *intarray;
 //    intarray=(int*)malloc(30);//alloc arr

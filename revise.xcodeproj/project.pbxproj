@@ -41,6 +41,7 @@
 		B752E2B623B8CBC00049C02B /* Square.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Square.h; sourceTree = "<group>"; };
 		B752E2B823B8CBD00049C02B /* Triangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Triangle.cpp; sourceTree = "<group>"; };
 		B752E2B923B8CBD00049C02B /* Triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Triangle.h; sourceTree = "<group>"; };
+		B7717475259A25BF00194A2B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		B7C738E823AE2C83000312EE /* revise */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = revise; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C738EB23AE2C83000312EE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		B7C738F323AE3644000312EE /* personTypeTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = personTypeTest.h; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		B7C738EA23AE2C83000312EE /* revise */ = {
 			isa = PBXGroup;
 			children = (
+				B7717475259A25BF00194A2B /* README.md */,
 				B72EA09A2582539C00048AD5 /* bst.h */,
 				B7C738EB23AE2C83000312EE /* main.cpp */,
 				B7C738F323AE3644000312EE /* personTypeTest.h */,

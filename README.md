@@ -1,8 +1,8 @@
 # revise
-(for 3 branches)
+(this branch)
 unit testing of some functions:
 
-realisation ict283-topic 6 
-tested pass by pointer and reference
-tested shallow and deep copy 
-tested memory leak
+avl done and working (not fully tested, deletion not done, should simplified code)
+bst to array 
+sorted array to balanced bst
+inorder iterative using stack
